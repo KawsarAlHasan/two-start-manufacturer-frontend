@@ -8,7 +8,7 @@ function SuccessOrder() {
   const [order, setOrder] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/orders/${orderId}`;
+    const url = `https://two-start-manufacturer-backend.vercel.app/orders/${orderId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
