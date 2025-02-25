@@ -11,13 +11,16 @@ function ManageOrder() {
     even.preventDefault();
   };
 
-  const { data: manageOrders, isLoading } = useQuery("manageOrders", () =>
-    fetch("http://localhost:5000/manageOrders").then((res) => res.json())
+  const { data: orders, isLoading } = useQuery("orders", () =>
+    fetch(
+      "https://two-start-manufacturer-backend.vercel.app/orders/manage"
+    ).then((res) => res.json())
   );
 
   const handleViewOrder = (id) => {
     navigate(`vieworder/${id}`);
   };
+
   return (
     <div>
       <h1 className="my-4 text-center">
@@ -57,7 +60,7 @@ function ManageOrder() {
           {isLoading ? (
             <Loading></Loading>
           ) : (
-            manageOrders
+            orders
               ?.filter((manageOrder) =>
                 manageOrder.status.toLowerCase().includes(filterValue)
               )

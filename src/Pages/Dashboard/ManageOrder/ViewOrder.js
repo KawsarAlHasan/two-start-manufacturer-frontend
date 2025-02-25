@@ -10,7 +10,7 @@ function ViewOrder() {
 
   const [orderProducts, setOrderProducts] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/manageOrders/${orderId}`;
+    const url = `https://two-start-manufacturer-backend.vercel.app/orders/${orderId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrderProducts(data));
@@ -23,7 +23,7 @@ function ViewOrder() {
   } = useForm();
 
   const onSubmit = async (updateData) => {
-    const urlLink = `http://localhost:5000/manageOrders/${orderId}`;
+    const urlLink = `https://two-start-manufacturer-backend.vercel.app/orders/manage/${orderId}`;
     fetch(urlLink, {
       method: "PUT",
       headers: {

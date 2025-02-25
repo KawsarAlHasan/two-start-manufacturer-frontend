@@ -82,7 +82,7 @@ function AddToCard() {
       orderFormattedDate: formattedDate,
     };
 
-    const url = `http://localhost:5000/orders`;
+    const url = `https://two-start-manufacturer-backend.vercel.app/orders`;
     fetch(url, {
       method: "POST",
       headers: {
